@@ -7,7 +7,7 @@
     "port": 5432,
     "host": "localhost",
     "database": "contentpi",
-    "username": "cms",
+    "username": "contentpi",
     "password": "12345678"
   },
   "security": {
