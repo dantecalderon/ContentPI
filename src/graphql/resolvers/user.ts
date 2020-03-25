@@ -28,6 +28,6 @@ export default {
       _: object,
       { input }: { input: iLoginInput },
       { models }: { models: iModels }
-    ): iAuthPayload => doLogin(input.email, input.password, models)
+    ): Promise<iAuthPayload> => doLogin(input.email, input.password, models)
   }
 }
