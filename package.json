@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --experimental-modules src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "start": "ts-node dist/index.js",
     "build": "tsc -p .",
     "lint": "eslint . --ext .js,.tsx,.ts",
