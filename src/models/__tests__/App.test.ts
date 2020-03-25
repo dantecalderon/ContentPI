@@ -1,5 +1,4 @@
 import Sequelize from 'sequelize-mock'
-import { isFunction } from 'fogg-utils'
 import App from '../App'
 
 const sequelize = new Sequelize()
