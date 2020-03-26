@@ -35,6 +35,12 @@
     "max-len": ["error", { "code": 80, "tabWidth": 2 }],
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx"]
+      }
+    ]
   }
 }
