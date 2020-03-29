@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./",
     "esModuleInterop": true,
     "module": "esnext",
     "noImplicitAny": true,
@@ -18,8 +18,11 @@
     "noEmit": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "layouts/*": ["src/shared/components/layouts/*"]
+    }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "declarations.d.ts"],
   "exclude": ["node_modules"]
 }

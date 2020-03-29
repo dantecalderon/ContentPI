@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@layouts/*": ["src/shared/components/layouts/*"]
+    }
+  },
+  "include": ["**/*.js"]
+}
