@@ -1,4 +1,4 @@
-import { App, User } from './types'
+import { App, User, Sequelize } from './types'
 
 // Sequelize
 export interface iDataTypes {
@@ -9,7 +9,7 @@ export interface iDataTypes {
 }
 
 // App
-export interface iApp extends App {
+export interface iApp extends App, Sequelize {
   id: string
   createdAt: Date
   updatedAt: Date
@@ -18,11 +18,11 @@ export interface iApp extends App {
 export interface iCreateAppInput extends App {}
 
 // User
-export interface iUser extends User {
+export interface iUser extends User, Sequelize {
   id: string
-  token: string
-  createdAt: Date
-  updatedAt: Date
+  token?: string
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 export interface iCreateUserInput extends User {}
