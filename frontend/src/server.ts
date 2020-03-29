@@ -12,7 +12,6 @@ nextApp.prepare().then(() => {
   const app = express()
 
   app.all('*', (req: any, res: any) => {
-    console.log('REQ', req.url)
     return handle(req, res)
   })
 

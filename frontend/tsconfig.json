@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "sourceMap": false,
     "target": "es6",
+    "types": ["node"],
     "typeRoots": ["src/@types", "./node_modules/@types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
