@@ -9,17 +9,18 @@
     "sourceMap": false,
     "target": "es6",
     "types": ["node"],
-    "typeRoots": ["src/@types", "./node_modules/@types"],
+    "typeRoots": ["src/typings", "./node_modules/@types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "moduleResolution": "node",
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
 }
