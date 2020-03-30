@@ -11,6 +11,8 @@ export default withSass({
     autoPrerender: false
   },
   webpack: config => {
+    config.resolve.extensions.push('.tsx')
+    config.resolve.alias['~'] = path.resolve(__dirname, './src')
     config.resolve.alias.styles = path.resolve(__dirname, './src/shared/styles')
     return config
   }

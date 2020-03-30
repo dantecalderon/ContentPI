@@ -4,7 +4,7 @@ import { DarkButton, PrimaryButton, Input } from 'fogg-ui'
 import { cx, redirectTo } from 'fogg-utils'
 
 // Components
-import Logo from 'layouts/main/Logo'
+import Logo from '~/shared/components/layouts/main/Logo'
 
 // Styles
 import styles from './Login.scss'
