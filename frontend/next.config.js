@@ -12,6 +12,7 @@ export default withSass({
   },
   webpack: config => {
     config.resolve.alias['@app'] = path.resolve(__dirname, './src/app')
+    config.resolve.alias['@config'] = path.resolve(__dirname, './config')
     config.resolve.alias['@pages'] = path.resolve(__dirname, './src/pages')
     config.resolve.alias['@shared'] = path.resolve(__dirname, './src/shared')
     config.resolve.alias.styles = path.resolve(__dirname, './src/shared/styles')
