@@ -21,7 +21,10 @@
     "jsx": "preserve",
     "paths": {
       "@app/*": ["app/*"],
-      "@config": ["config"],
+      "@config": ["../config"],
+      "@contexts/*": ["contexts/*"],
+      "@graphql/*": ["graphql/*"],
+      "@interfaces": ["interfaces"],
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"]
     }

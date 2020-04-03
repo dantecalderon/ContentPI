@@ -28,6 +28,10 @@ interface iConfig {
     default: string
     list: string[]
   }
+  security: {
+    secretKey: string
+    expiresIn: string
+  }
 }
 
 // development => local

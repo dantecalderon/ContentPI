@@ -5,5 +5,9 @@
   "languages": {
     "default": "es",
     "list": ["es", "en"]
+  },
+  "security": {
+    "secretKey": "C0Nt3NpI",
+    "expiresIn": "7d"
   }
 }
