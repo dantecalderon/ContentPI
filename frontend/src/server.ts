@@ -40,13 +40,17 @@ nextApp.prepare().then(() => {
   app.use(user)
 
   // Routes
-  app.get('/login', (req: any, res: any) => {
+  app.get('/login', isConnected(false), (req: any, res: any) => {
     return nextApp.render(req, res, '/users/login', req.query)
   })
 
   app.get(
     '/dashboard',
-    isConnected(true, ['god', 'admin'], '/login?redirectTo=/dashboard'),
+    isConnected(
+      true,
+      ['god', 'admin', 'editor'],
+      '/login?redirectTo=/dashboard'
+    ),
     (req: any, res: any) => {
       return nextApp.render(req, res, '/dashboard', req.query)
     }

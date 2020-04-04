@@ -7,7 +7,7 @@
     "list": ["es", "en"]
   },
   "security": {
-    "secretKey": "C0Nt3NpI",
+    "secretKey": "C0nT3ntP1",
     "expiresIn": "7d"
   }
 }

@@ -23,7 +23,7 @@ export const UserContext = createContext<iUserContext>({
 
 const UserProvider: FC<iProps> = ({ children }): ReactElement => {
   const { mutate } = useApolloClient()
-  const [, setCookie] = useCookies(['user'])
+  const [, setCookie] = useCookies(['at'])
   const [user, setUser] = useState([])
 
   async function login(input: { email: string; password: string }) {

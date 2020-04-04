@@ -4,7 +4,6 @@ import Head from 'next/head'
 
 // Contexts
 import { UserContext } from '@contexts/user'
-import { FormContext } from '@contexts/form'
 
 // Components
 import Login from './Login'
@@ -18,7 +17,6 @@ interface iProps {
 
 const Layout: FC<iProps> = ({ currentUrl }): ReactElement => {
   const { login } = useContext(UserContext)
-  const { form } = useContext(FormContext)
 
   return (
     <>
@@ -26,7 +24,7 @@ const Layout: FC<iProps> = ({ currentUrl }): ReactElement => {
         <title>Login</title>
         <meta name="title" content="Login" />
       </Head>
-      <Login login={login} currentUrl={currentUrl} form={form} />}
+      <Login login={login} currentUrl={currentUrl} />
     </>
   )
 }

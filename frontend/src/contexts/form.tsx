@@ -3,10 +3,8 @@ import React, { FC, ReactElement, useState, createContext } from 'react'
 
 // Interfaces
 interface iFormContext {
-  form: {
-    onChange(e: any): any
-    values: any
-  }
+  onChange(e: any): any
+  values: any
 }
 
 interface iProps {
@@ -15,10 +13,8 @@ interface iProps {
 }
 
 export const FormContext = createContext<iFormContext>({
-  form: {
-    onChange: () => null,
-    values: {}
-  }
+  onChange: () => null,
+  values: {}
 })
 
 const FormProvider: FC<iProps> = ({
@@ -28,17 +24,21 @@ const FormProvider: FC<iProps> = ({
   const [state, setState] = useState(initialValues)
 
   function onChange(e: any) {
-    setState(state => ({
-      ...state,
-      [name]: e.target.value
-    }))
+    const {
+      target: { name, value }
+    } = e
+
+    if (name && value) {
+      setState(state => ({
+        ...state,
+        [name]: value
+      }))
+    }
   }
 
   const context = {
-    form: {
-      onChange,
-      values: state
-    }
+    onChange,
+    values: state
   }
 
   return <FormContext.Provider value={context}>{children}</FormContext.Provider>

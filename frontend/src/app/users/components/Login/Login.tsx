@@ -5,6 +5,7 @@ import { cx, redirectTo } from 'fogg-utils'
 
 // Interfaces
 import { iUser } from '@interfaces'
+import { FormContext } from '@contexts/form'
 
 // Components
 import Logo from '@shared/components/layouts/main/Logo'
@@ -16,17 +17,16 @@ import styles from './Login.scss'
 interface iProps {
   login(input: any): any
   currentUrl: string
-  form: {
-    onChange(e: any): any
-    values: any
-  }
 }
 
-const Login: FC<iProps> = ({ login, currentUrl, form }): ReactElement => {
+const Login: FC<iProps> = ({ login, currentUrl }): ReactElement => {
   // States
   const [ready, setReady] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [invalidLogin, setInvalidLogin] = useState(false)
+
+  // Contexts
+  const { onChange, values } = useContext(FormContext)
 
   // Methods
   const handleLogin = async (user: iUser) => {
@@ -62,8 +62,8 @@ const Login: FC<iProps> = ({ login, currentUrl, form }): ReactElement => {
               className={styles.email}
               name="email"
               placeholder="Email"
-              onChange={form.onChange}
-              value={form.values.email}
+              onChange={onChange}
+              value={values.email}
             />
 
             <Input
@@ -72,16 +72,13 @@ const Login: FC<iProps> = ({ login, currentUrl, form }): ReactElement => {
               className={styles.password}
               name="password"
               placeholder="Password"
-              onChange={form.onChange}
-              value={form.values.password}
+              onChange={onChange}
+              value={values.password}
             />
 
             <div className={styles.actions}>
               <div className={styles.left}>
-                <DarkButton
-                  name="login"
-                  onClick={() => handleLogin(form.values)}
-                >
+                <DarkButton name="login" onClick={() => handleLogin(values)}>
                   Login
                 </DarkButton>
                 &nbsp;
