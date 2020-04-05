@@ -8,7 +8,7 @@ import cors from 'cors'
 import session from 'express-session'
 
 // Config
-import config from '../config'
+import config from './config'
 
 // Midlewares
 import user, { isConnected } from './shared/lib/middlewares/user'

@@ -6,7 +6,7 @@ import { ApolloLink } from 'apollo-link'
 import fetch from 'isomorphic-fetch'
 
 // Configuration
-import config from '../../../config'
+import config from '@config'
 
 export default () => {
   const httpLink = new HttpLink({

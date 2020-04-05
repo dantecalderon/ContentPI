@@ -14,7 +14,7 @@ export default withSass({
     const dir = __dirname
 
     config.resolve.alias['@app'] = path.resolve(dir, './src/app')
-    config.resolve.alias['@config'] = path.resolve(dir, '../config/')
+    config.resolve.alias['@config'] = path.resolve(dir, './src/config')
     config.resolve.alias['@contexts'] = path.resolve(dir, './src/contexts')
     config.resolve.alias['@graphql'] = path.resolve(dir, './src/graphql')
     config.resolve.alias['@interfaces'] = path.resolve(dir, './src/interfaces')
