@@ -7,6 +7,9 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import session from 'express-session'
 
+// Midlewares
+import user, { isConnected } from './shared/lib/middlewares/user'
+
 // Config
 import config from './config'
 
@@ -34,11 +37,24 @@ nextApp.prepare().then(() => {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(cookieParser(config.security.secretKey))
   app.use(cors({ credentials: true, origin: true }))
+  app.use(user)
 
   // Routes
-  app.get('/login', (req: any, res: any) => {
+  app.get('/login', isConnected(false), (req: any, res: any) => {
     return nextApp.render(req, res, '/users/login', req.query)
   })
+
+  app.get(
+    '/dashboard',
+    isConnected(
+      true,
+      ['god', 'admin', 'editor'],
+      '/login?redirectTo=/dashboard'
+    ),
+    (req: any, res: any) => {
+      return nextApp.render(req, res, '/dashboard', req.query)
+    }
+  )
 
   app.all('*', (req: any, res: any) => {
     return handle(req, res)
