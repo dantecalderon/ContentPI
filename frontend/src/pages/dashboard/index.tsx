@@ -1,4 +1,7 @@
 // Dependencies
 import React from 'react'
 
-export default () => <h1>Dashboard Page</h1>
+// Components
+import DashboardLayout from '@app/dashboard/components/Layout'
+
+export default () => <DashboardLayout />
