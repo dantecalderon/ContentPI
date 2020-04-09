@@ -21,6 +21,31 @@ const Cards: FC = (): ReactElement => {
       name: 'project 2',
       icon: 'fas fa-text-width',
       color: '#222'
+    },
+    {
+      name: 'project 2',
+      icon: 'fas fa-text-width',
+      color: '#222'
+    },
+    {
+      name: 'project 2',
+      icon: 'fas fa-text-width',
+      color: '#222'
+    },
+    {
+      name: 'project 2',
+      icon: 'fas fa-text-width',
+      color: '#222'
+    },
+    {
+      name: 'project 1',
+      icon: 'fas fa-text-width',
+      color: '#0d9a67'
+    },
+    {
+      name: 'project 1',
+      icon: 'fas fa-text-width',
+      color: '#0d9a67'
     }
   ]
 
@@ -33,12 +58,12 @@ const Cards: FC = (): ReactElement => {
           return (
             <li key={i}>
               <section className={styles.card}>
-                <span
+                <section
                   className={styles.app}
                   style={{ backgroundColor: app.color }}
                 >
                   {app.name.substring(0, 2)}
-                </span>
+                </section>
                 <span>{app.name}</span>
               </section>
             </li>
@@ -47,7 +72,10 @@ const Cards: FC = (): ReactElement => {
 
         <li>
           <section className={styles.card}>
-            <Icon type="fas fa-plus" />
+            <section className={styles.app}>
+              <Icon type="fas fa-plus" />
+            </section>
+
             <span>Create new App</span>
           </section>
         </li>

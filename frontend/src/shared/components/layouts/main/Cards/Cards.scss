@@ -2,13 +2,15 @@
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-left: 40px;
   padding-top: 50px;
+  width: 100%;
 
   h1 {
     padding: 0px;
     margin: 0px;
+    text-align: left;
   }
 
   ul {
@@ -17,6 +19,7 @@
     margin: 0px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     li {
       .card {
@@ -34,15 +37,12 @@
 
         &:hover {
           cursor: pointer;
-          i {
-            color: $dustyGray;
-          }
-        }
 
-        i {
-          font-size: 54px;
-          color: $denim;
-          padding: 8px;
+          .app {
+            i {
+              color: $dustyGray;
+            }
+          }
         }
 
         span {
@@ -62,6 +62,12 @@
           text-transform: uppercase;
           font-size: 18px;
           font-weight: 600;
+
+          i {
+            font-size: 54px;
+            color: $denim;
+            padding: 8px;
+          }
         }
       }
     }
