@@ -1,9 +1,13 @@
 // Dependencies
-import React, { FC, ReactElement, useContext } from 'react'
+import React, { FC, ReactElement, useContext, useEffect } from 'react'
 import Head from 'next/head'
 
 // Contexts
 import { UserContext } from '@contexts/user'
+import { AppContext } from '@contexts/app'
+
+// Mutations
+import GET_APPS_QUERY from '@graphql/app/app.query'
 
 // Shared components
 import Logo from '@shared/components/layouts/main/Logo'
@@ -13,7 +17,26 @@ import Cards from '@shared/components/layouts/main/Cards'
 import styles from './App.scss'
 
 const Layout: FC = (): ReactElement => {
-  const { user } = useContext(UserContext)
+  // Contexts
+  const { get, state } = useContext(AppContext)
+
+  // Effects
+  useEffect(() => {
+    if (!state.getApps) {
+      fetch()
+    }
+  }, [state])
+
+  // Methods
+  const fetch = async () => {
+    await get({
+      query: GET_APPS_QUERY
+    })
+  }
+
+  if (!state.getApps) {
+    return <div />
+  }
 
   return (
     <>
@@ -29,7 +52,7 @@ const Layout: FC = (): ReactElement => {
           </div>
         </div>
 
-        <Cards />
+        <Cards items={state.getApps} />
       </div>
     </>
   )

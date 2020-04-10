@@ -22,6 +22,14 @@
     flex-wrap: wrap;
 
     li {
+      a {
+        color: $black;
+
+        &:hover {
+          color: $denim;
+        }
+      }
+
       .card {
         width: 210px;
         height: 260px;
@@ -37,12 +45,6 @@
 
         &:hover {
           cursor: pointer;
-
-          .app {
-            i {
-              color: $dustyGray;
-            }
-          }
         }
 
         span {
