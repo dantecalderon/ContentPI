@@ -15,7 +15,7 @@ export default () => (
   <ApolloProvider client={useApolloClient()}>
     <UserProvider>
       <AppProvider>
-        <DashboardLayout />
+        <DashboardLayout moduleName="Home" />
       </AppProvider>
     </UserProvider>
   </ApolloProvider>
