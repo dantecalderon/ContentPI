@@ -36,6 +36,7 @@ const AppProvider: FC<iProps> = ({ children }): ReactElement => {
         setState({
           [queryName]: data[queryName]
         })
+
         return data
       }
     } catch (err) {
