@@ -6,12 +6,18 @@ import Head from 'next/head'
 import { UserContext } from '@contexts/user'
 
 // Components
-import App from './App'
+import App from './Apps'
+import Home from './Home'
 
 // Styles
 import styles from './Layout.scss'
 
-const Layout: FC = (): ReactElement => {
+// Interfaces
+interface iProps {
+  moduleName?: string
+}
+
+const Layout: FC<iProps> = ({ moduleName = '' }): ReactElement => {
   const { user } = useContext(UserContext)
 
   return (
@@ -22,7 +28,8 @@ const Layout: FC = (): ReactElement => {
       </Head>
 
       <div className={styles.layout}>
-        <App />
+        {moduleName === 'Home' && <Home />}
+        {!moduleName && <App />}
       </div>
     </>
   )

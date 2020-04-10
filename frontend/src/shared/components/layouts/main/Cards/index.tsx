@@ -44,7 +44,7 @@ const Cards: FC<iProps> = ({ items }): ReactElement => {
           {items.map((app, i) => {
             return (
               <li key={i}>
-                <Link href={`/dashboard/${app.id}`}>
+                <Link href={`/dashboard/${app.id}/master`}>
                   <section className={styles.card} title={app.description}>
                     <section
                       className={styles.app}

@@ -3,7 +3,6 @@ import React, { FC, ReactElement, useContext, useEffect } from 'react'
 import Head from 'next/head'
 
 // Contexts
-import { UserContext } from '@contexts/user'
 import { AppContext } from '@contexts/app'
 
 // Mutations
@@ -14,9 +13,9 @@ import Logo from '@shared/components/layouts/main/Logo'
 import Cards from '@shared/components/layouts/main/Cards'
 
 // Styles
-import styles from './App.scss'
+import styles from './Apps.scss'
 
-const Layout: FC = (): ReactElement => {
+const Apps: FC = (): ReactElement => {
   // Contexts
   const { get, state } = useContext(AppContext)
 
@@ -45,7 +44,7 @@ const Layout: FC = (): ReactElement => {
         <meta name="title" content="Dashboard" />
       </Head>
 
-      <div className={styles.layout}>
+      <div className={styles.apps}>
         <div className={styles.header}>
           <div className={styles.logo}>
             <Logo />
@@ -58,4 +57,4 @@ const Layout: FC = (): ReactElement => {
   )
 }
 
-export default Layout
+export default Apps
