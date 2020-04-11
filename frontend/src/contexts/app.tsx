@@ -21,7 +21,7 @@ const AppProvider: FC<iProps> = ({ children }): ReactElement => {
   const { query: queryFn } = useApolloClient()
   const [state, setState] = useState({})
 
-  async function get(options: any) {
+  async function get(options: any): Promise<any> {
     const { query, variables = {} } = options
 
     const queryName = getQueryName(query)
@@ -42,6 +42,8 @@ const AppProvider: FC<iProps> = ({ children }): ReactElement => {
     } catch (err) {
       return getGraphQlError(err)
     }
+
+    return false
   }
 
   const context = {

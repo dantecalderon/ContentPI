@@ -8,7 +8,7 @@ import fetch from 'isomorphic-fetch'
 // Configuration
 import config from '@config'
 
-export default () => {
+export default (): any => {
   const httpLink = new HttpLink({
     uri: config.api.uri,
     credentials: config.api.credentials,
@@ -16,7 +16,7 @@ export default () => {
   })
 
   const cache = new InMemoryCache({
-    dataIdFromObject: object => object.id || null,
+    dataIdFromObject: (object): any => object.id || null,
     addTypename: false
   })
 

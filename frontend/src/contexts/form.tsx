@@ -23,14 +23,14 @@ const FormProvider: FC<iProps> = ({
 }): ReactElement => {
   const [state, setState] = useState(initialValues)
 
-  function onChange(e: any) {
+  function onChange(e: any): void {
     const {
       target: { name, value }
     } = e
 
     if (name && value) {
-      setState(state => ({
-        ...state,
+      setState(prevState => ({
+        ...prevState,
         [name]: value
       }))
     }

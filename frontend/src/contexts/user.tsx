@@ -26,7 +26,10 @@ const UserProvider: FC<iProps> = ({ children }): ReactElement => {
   const [, setCookie] = useCookies()
   const [user, setUser] = useState([])
 
-  async function login(input: { email: string; password: string }) {
+  async function login(input: {
+    email: string
+    password: string
+  }): Promise<any> {
     try {
       const { data } = await mutate({
         mutation: LOGIN_MUTATION,

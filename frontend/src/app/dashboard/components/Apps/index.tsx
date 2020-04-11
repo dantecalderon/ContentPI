@@ -19,19 +19,19 @@ const Apps: FC = (): ReactElement => {
   // Contexts
   const { get, state } = useContext(AppContext)
 
+  // Methods
+  const fetch = async (): Promise<void> => {
+    await get({
+      query: GET_APPS_QUERY
+    })
+  }
+
   // Effects
   useEffect(() => {
     if (!state.getApps) {
       fetch()
     }
   }, [state])
-
-  // Methods
-  const fetch = async () => {
-    await get({
-      query: GET_APPS_QUERY
-    })
-  }
 
   if (!state.getApps) {
     return <div />

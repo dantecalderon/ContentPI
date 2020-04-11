@@ -1,7 +1,7 @@
 // Dependencies
-import React, { FC, ReactElement, useState, useContext, useEffect } from 'react'
+import React, { FC, ReactElement, useState, useContext } from 'react'
 import { Alert, DarkButton, PrimaryButton, Input, RenderIf } from 'fogg-ui'
-import { cx, redirectTo } from 'fogg-utils'
+import { redirectTo } from 'fogg-utils'
 
 // Contexts
 import { FormContext } from '@contexts/form'
@@ -9,18 +9,18 @@ import { FormContext } from '@contexts/form'
 // Components
 import Logo from '@shared/components/layouts/main/Logo'
 
-// Styles
-import styles from './Login.scss'
-
 // Interfaces
 import { iUser } from '@interfaces'
+
+// Styles
+import styles from './Login.scss'
 
 interface iProps {
   login(input: any): any
   currentUrl: string
 }
 
-const Login: FC<iProps> = ({ login, currentUrl }) => {
+const Login: FC<iProps> = ({ login, currentUrl }): ReactElement => {
   // States
   const [errorMessage, setErrorMessage] = useState('')
   const [invalidLogin, setInvalidLogin] = useState(false)
@@ -29,7 +29,7 @@ const Login: FC<iProps> = ({ login, currentUrl }) => {
   const { onChange, values } = useContext(FormContext)
 
   // Methods
-  const handleLogin = async (user: iUser) => {
+  const handleLogin = async (user: iUser): Promise<void> => {
     const response = await login(user)
 
     if (response.error) {
@@ -78,7 +78,10 @@ const Login: FC<iProps> = ({ login, currentUrl }) => {
 
             <div className={styles.actions}>
               <div className={styles.left}>
-                <DarkButton name="login" onClick={() => handleLogin(values)}>
+                <DarkButton
+                  name="login"
+                  onClick={(): Promise<void> => handleLogin(values)}
+                >
                   Login
                 </DarkButton>
                 &nbsp;

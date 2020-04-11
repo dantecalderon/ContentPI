@@ -1,9 +1,6 @@
 // Dependencies
-import React, { FC, ReactElement, useContext } from 'react'
+import React, { FC, ReactElement } from 'react'
 import Head from 'next/head'
-
-// Contexts
-import { UserContext } from '@contexts/user'
 
 // Components
 import Apps from './Apps'

@@ -10,6 +10,7 @@
     "build:server": "tsc -p .",
     "build:next": "next build",
     "lint": "eslint . --ext .js,.tsx,.ts",
+    "lint:fix": "eslint . --ext .js,.tsx,.ts --fix",
     "test": "jest src"
   },
   "jest": {

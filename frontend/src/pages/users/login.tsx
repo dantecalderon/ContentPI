@@ -1,4 +1,5 @@
 // Dependencies
+import React, { ReactElement } from 'react'
 import { ApolloProvider } from 'react-apollo-hooks'
 import { isBrowser } from 'fogg-utils'
 
@@ -16,7 +17,7 @@ const LoginPage = ({
   currentUrl = isBrowser()
     ? window.location.search.replace('?redirectTo=', '')
     : ''
-}) => (
+}): ReactElement => (
   <ApolloProvider client={useApolloClient()}>
     <UserProvider>
       <FormProvider initialValues={{ email: '', password: '' }}>

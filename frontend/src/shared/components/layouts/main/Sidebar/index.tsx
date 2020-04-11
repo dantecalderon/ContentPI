@@ -14,7 +14,7 @@ const Sidebar: FC = (): ReactElement => {
   const [open, setOpen] = useState(false)
 
   // Methods
-  const handleOpen = () => setOpen(!open)
+  const handleOpen = (): void => setOpen(!open)
 
   return (
     <aside className={styles.sidebar}>

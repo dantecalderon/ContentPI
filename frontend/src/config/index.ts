@@ -42,14 +42,14 @@ if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
 }
 
 // Configurations by environment
-let config: iConfig = {
+const config: iConfig = {
   ...common,
   ...(env === 'local' ? local : production)
 }
 
 // Environments validations
-export const isLocal = () => env === 'local'
-export const isProduction = () => env === 'production'
+export const isLocal = (): boolean => env === 'local'
+export const isProduction = (): boolean => env === 'production'
 
 // Configuration
 export default config

@@ -1,5 +1,5 @@
 // Dependencies
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 // Components
 import Link from 'next/link'
@@ -7,12 +7,12 @@ import Link from 'next/link'
 // Styles
 import styles from './Logo.scss'
 
-const Logo = () => {
+const Logo = (): ReactElement => {
   return (
     <div className={styles.logo}>
       <Link href="/">
         <a>
-          <img src="/images/logo.png" />
+          <img alt="Logo" src="/images/logo.png" />
         </a>
       </Link>
     </div>
