@@ -19,7 +19,7 @@ const Cards: FC<iProps> = ({ items }): ReactElement => {
   const title = 'My Apps'
 
   // Method to open modal
-  const handleModal = () => setIsOpen(!isOpen)
+  const handleModal = (): void => setIsOpen(!isOpen)
 
   return (
     <>
