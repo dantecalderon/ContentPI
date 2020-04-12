@@ -1,11 +1,12 @@
 // Dependencies
 import React, { FC, ReactElement, useContext, useState, useEffect } from 'react'
 import { Modal, Badge, Input, DarkButton, Icon } from 'fogg-ui'
-import { generateHexCode, redirectTo } from 'fogg-utils'
+import { generateHexCode, invertHexCode, redirectTo } from 'fogg-utils'
 
 // Contexts
 import { FormContext } from '@contexts/form'
 import { AppContext } from '@contexts/app'
+import { UserContext } from '@contexts/user'
 
 // Mutation
 import CREATE_APP_MUTATION from '@graphql/apps/createApp.mutation'
@@ -30,6 +31,7 @@ const CreateAppModal: FC<iProps> = ({
   })
 
   // Contexts
+  const { user } = useContext(UserContext)
   const { onChange, values, setInitialValues, setValue } = useContext(
     FormContext
   )
@@ -58,7 +60,12 @@ const CreateAppModal: FC<iProps> = ({
   // Effects
   useEffect(() => {
     // Setting up our initial values
-    setInitialValues({ appName: '', icon: generateHexCode(), description: '' })
+    setInitialValues({
+      appName: '',
+      icon: generateHexCode(),
+      description: '',
+      userId: user.id
+    })
   }, [])
 
   return (
@@ -87,7 +94,7 @@ const CreateAppModal: FC<iProps> = ({
           value={values.icon}
           readOnly
           style={{
-            color: 'white',
+            color: invertHexCode(values.icon),
             backgroundColor: values.icon
           }}
         />

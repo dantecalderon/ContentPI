@@ -60,6 +60,7 @@ nextApp.prepare().then(() => {
       }
 
       return nextApp.render(req, res, page, {
+        user: req.user,
         ...req.params,
         ...req.query
       })

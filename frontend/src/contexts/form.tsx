@@ -40,7 +40,7 @@ const FormProvider: FC<iProps> = ({
     }
   }
 
-  function setValue(key: string, value: any) {
+  function setValue(key: string, value: any): void {
     setState(prevState => ({
       ...prevState,
       [key]: value
