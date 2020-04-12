@@ -4,16 +4,20 @@ import React, { FC, ReactElement, useState, createContext } from 'react'
 // Interfaces
 interface iFormContext {
   onChange(e: any): any
+  setInitialValues(values: any): any
+  setValue(key: string, value: any): any
   values: any
 }
 
 interface iProps {
   children: ReactElement
-  initialValues: object
+  initialValues?: object
 }
 
 export const FormContext = createContext<iFormContext>({
   onChange: () => null,
+  setInitialValues: () => null,
+  setValue: () => null,
   values: {}
 })
 
@@ -28,7 +32,7 @@ const FormProvider: FC<iProps> = ({
       target: { name, value }
     } = e
 
-    if (name && value) {
+    if (name) {
       setState(prevState => ({
         ...prevState,
         [name]: value
@@ -36,8 +40,23 @@ const FormProvider: FC<iProps> = ({
     }
   }
 
+  function setValue(key: string, value: any): void {
+    setState(prevState => ({
+      ...prevState,
+      [key]: value
+    }))
+  }
+
+  function setInitialValues(values: any): void {
+    if (Object.keys(state).length === 0) {
+      setState(values)
+    }
+  }
+
   const context = {
     onChange,
+    setInitialValues,
+    setValue,
     values: state
   }
 

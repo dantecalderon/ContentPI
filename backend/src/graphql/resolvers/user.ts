@@ -16,7 +16,15 @@ export default {
       _: object,
       _args: object,
       { models }: { models: iModels }
-    ): iUser[] => models.User.findAll()
+    ): iUser[] =>
+      models.User.findAll({
+        include: [
+          {
+            model: models.App,
+            as: 'apps'
+          }
+        ]
+      })
   },
   Mutation: {
     createUser: (

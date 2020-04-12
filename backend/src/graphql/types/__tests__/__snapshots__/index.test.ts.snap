@@ -19,6 +19,7 @@ type Mutation {
 
 type App {
   id: UUID!
+  userId: UUID!
   appName: String!
   icon: String!
   description: String!
@@ -30,6 +31,7 @@ input CreateAppInput {
   appName: String!
   icon: String!
   description: String!
+  userId: UUID!
 }
 
 scalar UUID
@@ -45,6 +47,7 @@ type User {
   active: Boolean!
   createdAt: Datetime!
   updatedAt: Datetime!
+  apps: [App!]
 }
 
 input CreateUserInput {

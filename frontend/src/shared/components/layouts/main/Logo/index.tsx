@@ -2,7 +2,7 @@
 import React, { ReactElement } from 'react'
 
 // Components
-import Link from 'next/link'
+import Link from '@ui/Link'
 
 // Styles
 import styles from './Logo.scss'
@@ -10,10 +10,8 @@ import styles from './Logo.scss'
 const Logo = (): ReactElement => {
   return (
     <div className={styles.logo}>
-      <Link href="/">
-        <a>
-          <img alt="Logo" src="/images/logo.png" />
-        </a>
+      <Link href="/dashboard">
+        <img alt="Logo" src="/images/logo.png" />
       </Link>
     </div>
   )

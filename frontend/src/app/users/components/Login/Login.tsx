@@ -7,7 +7,7 @@ import { redirectTo } from 'fogg-utils'
 import { FormContext } from '@contexts/form'
 
 // Components
-import Logo from '@shared/components/layouts/main/Logo'
+import Logo from '@layouts/main/Logo'
 
 // Interfaces
 import { iUser } from '@interfaces'
