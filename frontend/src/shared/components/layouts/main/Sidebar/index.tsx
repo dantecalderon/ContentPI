@@ -3,7 +3,7 @@ import React, { FC, ReactElement, useState } from 'react'
 import { Icon } from 'fogg-ui'
 
 // Components
-import Link from '../../../ui/Link'
+import Link from '@ui/Link'
 import Logo from '../Logo'
 
 // Styles

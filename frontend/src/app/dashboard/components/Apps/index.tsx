@@ -6,11 +6,11 @@ import Head from 'next/head'
 import { AppContext } from '@contexts/app'
 
 // Queries
-import GET_APPS_QUERY from '@graphql/apps/apps.query'
+import GET_APPS_QUERY from '@graphql/apps/getApps.query'
 
 // Shared components
-import Logo from '@shared/components/layouts/main/Logo'
-import Cards from '@shared/components/layouts/main/Cards'
+import Logo from '@layouts/main/Logo'
+import Cards from '@layouts/main/Cards'
 
 // Styles
 import styles from './Apps.scss'
@@ -33,6 +33,7 @@ const Apps: FC = (): ReactElement => {
     }
   }, [state])
 
+  // First render
   if (!state.getApps) {
     return <div />
   }
